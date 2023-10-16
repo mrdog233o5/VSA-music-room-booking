@@ -1,10 +1,15 @@
-<div class="room 1">
+<div class="room {num} key">
     <img class="background">
+    <audio class="noteAudio" preload="auto">
+        <source src="/files/audio/click.mp3">
+    </audio>
     <div class="text">
-        <h1 class="left">1</h1>
-        <div class="right">
-            <h2 class="location">room: 1234</h2>
-            <h2 class="teacher">teachers: mr.bousefield</h2>
+        <h1 class="left text">{num}</h1>
+        <div class="right text">
+            <div class="placeholder">
+                <h2 class="location">room: {room}</h2>
+                <h2 class="teacher">teachers: {teachers}</h2>
+            </div>
         </div>
     </div>
 </div>
