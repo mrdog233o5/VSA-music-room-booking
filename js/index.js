@@ -22,7 +22,7 @@ async function getText(file) {
     let keys = Array.from(document.getElementsByClassName("key"));
     for (var i = 0; i < keys.length; i++) {
       console.log(i);
-      keys[i].addEventListener("click", (function (index) {
+      keys[i].addEventListener("mouseenter", (function (index) {
         return function () {
           playsound(index);
         };

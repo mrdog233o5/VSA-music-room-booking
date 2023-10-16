@@ -22,10 +22,10 @@ body {
 .key::after {
     content: " ";
     display: block;
-    width: 40vw;
-    height: 12vh;
+    width: 50vw;
+    height: 14vw;
     position: absolute;
-    bottom: -6vh;
+    bottom: -7vw;
     right: 0mm;
     background-color: #141817;
     border-top-left-radius: 3mm;

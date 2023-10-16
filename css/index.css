@@ -16,7 +16,7 @@
 
 .room  {
     position: relative;
-    height: 50vw;
+    height: 40vw;
 }
 
 .room .background {
@@ -54,4 +54,9 @@
 
 .room .text .right {
     position: relative;
+}
+
+.room .text .right img {
+    margin: 10mm 0;
+    border-radius: 3mm;
 }
