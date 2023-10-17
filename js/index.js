@@ -38,5 +38,5 @@ function playsound(num) {
 }
 
 function scrollDown() {
-	window.scrollBy(100, 0);
+	window.scrollTo(0, 800);
 }
