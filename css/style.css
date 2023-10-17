@@ -18,6 +18,10 @@ body {
     border-bottom: #1C2321 solid 1mm;
 }
 
+.key * {
+    transition: all 0.5s ease-in-out;
+}
+
 .key .whiteKey {
     position: relative;
     width: 100%;
@@ -41,6 +45,10 @@ body {
     border-top-left-radius: 3mm;
     border-bottom-left-radius: 3mm;
     z-index: 2;
+}
+
+.key .blackKey :hover {
+    scale: 1.05;
 }
 
 .key .blackKey .placeholder {
