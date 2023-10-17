@@ -1,6 +1,12 @@
 {
-  "dependencies": {
-    "jquery": "^3.7.1",
-    "python": "^0.0.4"
-  }
+  "name": "vsa-music-room-booking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo test command"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

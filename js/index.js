@@ -13,6 +13,7 @@ async function getText(file) {
 			finalCode =finalCode + roomCode
 					.replace("{num}", i + 1)
 					.replace("{num}", i + 1)
+					.replace("{num}", i + 1)
 					.replace("{room}", infos[i + 1]["room"]);
 		}
 		container.innerHTML = finalCode;
