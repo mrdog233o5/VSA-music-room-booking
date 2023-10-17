@@ -18,8 +18,8 @@ async function getText(file) {
 		container.innerHTML = finalCode;
 	
 		let keys = Array.from(document.getElementsByClassName("key"));
+
 		for (var i = 0; i < keys.length; i++) {
-			console.log(i);
 			keys[i].addEventListener("click", (function (index) {
 				return function () {
 					playsound(index);
