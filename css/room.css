@@ -1,0 +1,10 @@
+.titleSec {
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5vw;
+    color: #30011E;
+}
