@@ -1,3 +1,21 @@
+.backKey {
+    position: relative;
+    background-color:#30011E;
+    height: 15mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.backKey a{
+    height: 100%;
+    width: 100%;
+    color: #ffe2b4;
+    text-align: center;
+    font-size: 200%;
+}
+
 .titleSec {
     height: 30vh;
     display: flex;
@@ -7,4 +25,25 @@
     text-align: center;
     font-size: 5vw;
     color: #30011E;
+}
+
+.descriptionSec {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.calendar {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3mm;
+    margin: 1cm;
+    width: 60vw;
+    height: 50vw;
+}
+
+.calendar iframe {
+    width: 100%;
+    height: 100%;
 }

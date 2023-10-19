@@ -16,6 +16,10 @@ body {
     scroll-behavior: smooth;
 }
 
+a {
+    text-decoration: none;
+}
+
 .key {
     position: relative;
     border-bottom: #1C2321 solid 1mm;
@@ -39,14 +43,17 @@ body {
     justify-items: center;
     align-items: center;
     background-color: #141817;
-    color: #ffe2b4;
     font-size: 4vw;
     border-top-left-radius: 3mm;
     border-bottom-left-radius: 3mm;
     z-index: 2;
 }
 
-.key .blackKey :hover h1 {
+.key .blackKey * {
+    color: #ffe2b4;
+}
+
+.key .blackKey :hover * {
     scale: 1.05;
 }
 

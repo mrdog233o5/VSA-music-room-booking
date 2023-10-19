@@ -14,6 +14,7 @@ async function roomList() {
 				.replace("{num}", i + 1)
 				.replace("{num}", i + 1)
 				.replace("{num}", i + 1)
+				.replace("{num}", i + 1)
 				.replace("{room}", infos[i + 1]["room"]);
 	}
 	container.innerHTML = finalCode;
