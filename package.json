@@ -1,12 +1,31 @@
 {
-  "name": "vsa-music-room-booking",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo test command"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "vsa-music-room-booking",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "watch:css": "postcss css/* --dir dest/css -w",
+        "watch:js": "babel js/* --out-dir dest/js -w"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.2",
+        "@babel/preset-env": "^7.23.2",
+        "autoprefixer": "^10.4.16",
+        "cssnano": "^6.0.1",
+        "pixrem": "^5.0.0",
+        "postcss": "^8.4.31",
+        "postcss-cli": "^10.1.0",
+        "postcss-color-rgba-fallback": "^4.0.0",
+        "postcss-fixes": "^3.0.0",
+        "postcss-opacity": "^5.0.0",
+        "postcss-preset-env": "^9.2.0",
+        "postcss-pseudoelements": "^5.0.0",
+        "postcss-vmin": "^3.0.0",
+        "postcss-will-change": "^4.0.1",
+        "rucksack-css": "^1.0.2"
+    }
 }
