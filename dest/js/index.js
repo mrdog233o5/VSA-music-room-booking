@@ -45,14 +45,14 @@ function _roomList() {
           return getText("/files/infos/rooms.json");
         case 4:
           _context2.t1 = _context2.sent;
-          infos = _context2.t0.parse.call(_context2.t0, _context2.t1);
+          infos = _context2.t0.parse.call(_context2.t0, _context2.t1)["rooms"];
           container = document.getElementsByClassName("roomsSec")[0];
           _context2.next = 9;
           return getText("/files/html/room.html");
         case 9:
           roomCode = _context2.sent;
           for (_i = 0; _i < 5; _i++) {
-            finalCode = finalCode + roomCode.replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{room}", infos[_i + 1]["room"]);
+            finalCode = finalCode + roomCode.replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{room}", infos[_i]["room"]);
           }
           container.innerHTML = finalCode;
           keys = Array.from(document.getElementsByClassName("key"));

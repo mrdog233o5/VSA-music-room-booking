@@ -23,27 +23,33 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 5vw;
+    font-size: 13vw;
     color: #30011E;
 }
 
-.descriptionSec {
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    align-items: center;
+.sec {
+    padding: 10mm;
 }
 
-.calendar {
+.desSec {
+    font-size: 4vw;
+}
+
+.bookItem {
+    display: block;
     position: relative;
-    overflow: hidden;
-    border-radius: 3mm;
-    margin: 1cm;
-    width: 60vw;
-    height: 50vw;
+    padding: 1vw;
+    height: 60vh;
 }
 
-.calendar iframe {
+.bookItem iframe {
     width: 100%;
     height: 100%;
+    border-radius: 5mm;
+    background-color: #121212;
+    box-shadow: 0 0 10mm #121212;
+}
+
+.bookItem iframe:hover {
+    scale: 1.02;
 }
