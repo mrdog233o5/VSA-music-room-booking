@@ -1,14 +1,13 @@
 async function getText(file) {
-		var myObject = await fetch(file);
-		var myText = await myObject.text();
-		return myText;
+	var myObject = await fetch(file);
+	var myText = await myObject.text();
+	return myText;
 }
-	
+
 async function roomList() {
-	var finalCode = "";
-	var container = document.getElementsByClassName("roomsSec")[0];
-	const roomCode = await getText("/files/html/room.html");
-    const infos = await getText("/files/infos/rooms.json");
+	var container = document.getElementsByClassName("bottomSec")[0];
+	var bottomHtml = await getText("/files/html/bottom.html");
+	container.innerHTML = bottomHtml;
 }
 
 // some music rooms idk
