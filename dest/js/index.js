@@ -35,22 +35,22 @@ function roomList() {
 } // some music rooms idk
 function _roomList() {
   _roomList = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-    var finalCode, infos, container, roomCode, _i, keys, i;
+    var finalCode, container, roomCode, infos, _i, keys, i;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           finalCode = "";
-          _context2.t0 = JSON;
+          container = document.getElementsByClassName("roomsSec")[0];
           _context2.next = 4;
-          return getText("/files/infos/rooms.json");
+          return getText("/files/html/room.html");
         case 4:
+          roomCode = _context2.sent;
+          _context2.t0 = JSON;
+          _context2.next = 8;
+          return getText("/files/infos/rooms.json");
+        case 8:
           _context2.t1 = _context2.sent;
           infos = _context2.t0.parse.call(_context2.t0, _context2.t1)["rooms"];
-          container = document.getElementsByClassName("roomsSec")[0];
-          _context2.next = 9;
-          return getText("/files/html/room.html");
-        case 9:
-          roomCode = _context2.sent;
           for (_i = 0; _i < 5; _i++) {
             finalCode = finalCode + roomCode.replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{num}", _i + 1).replace("{room}", infos[_i]["room"]);
           }

@@ -44,9 +44,11 @@ a {
     align-items: center;
     background-color: #141817;
     font-size: 4vw;
+    border: none;
     border-top-left-radius: 3mm;
     border-bottom-left-radius: 3mm;
     z-index: 2;
+
 }
 
 .key .blackKey * {
@@ -57,18 +59,29 @@ a {
     scale: 1.05;
 }
 
+.key .blackKey{
+    box-shadow: 0 0 5mm black;
+}
+
 .key .blackKey .placeholder {
     width: 100%;
     text-align: center;
 }
 
 .placeholder {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
     width: 100%;
     text-align: center;
 }
 
 .h1 {
-    font-size: 7vw;
+    font-size: 20mm;
     margin: 7mm;
+    width: 100%;
+    text-align: center;
+    left: 0;
     font-weight: bolder;
 }

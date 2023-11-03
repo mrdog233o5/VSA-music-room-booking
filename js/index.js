@@ -1,3 +1,4 @@
+
 async function getText(file) {
 		var myObject = await fetch(file);
 		var myText = await myObject.text();
@@ -6,9 +7,9 @@ async function getText(file) {
 	
 async function roomList() {
 	var finalCode = "";
-	var infos = JSON.parse(await getText("/files/infos/rooms.json"))["rooms"];
 	var container = document.getElementsByClassName("roomsSec")[0];
 	const roomCode = await getText("/files/html/room.html");
+	var infos = JSON.parse(await getText("/files/infos/rooms.json"))["rooms"];
 	for (let i = 0; i < 5; i++) {
 		finalCode =finalCode + roomCode
 				.replace("{num}", i + 1)
