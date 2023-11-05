@@ -32,32 +32,28 @@ function _getText() {
   }));
   return _getText.apply(this, arguments);
 }
-function setupDescription() {
+function setupDescription(_x2) {
   return _setupDescription.apply(this, arguments);
 }
 function _setupDescription() {
-  _setupDescription = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-    var room, desSec, roomNum, infos;
+  _setupDescription = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(roomNum) {
+    var desSec, infos;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           // read
-          room = document.getElementById('room');
           desSec = document.getElementsByClassName('desSec')[0];
-          roomNum = Number(room.getAttribute('data'));
           _context2.t0 = JSON;
-          _context2.next = 6;
+          _context2.next = 4;
           return getText("/files/infos/rooms.json");
-        case 6:
+        case 4:
           _context2.t1 = _context2.sent;
           _context2.t2 = roomNum - 1;
           infos = _context2.t0.parse.call(_context2.t0, _context2.t1)["rooms"][_context2.t2];
-          room.style.display = "none";
-
           // change the text
           document.getElementsByClassName("titleText")[0].innerHTML = infos["room"];
           desSec.querySelector("#location").innerHTML = "location: " + infos["room"];
-        case 12:
+        case 9:
         case "end":
           return _context2.stop();
       }
@@ -71,5 +67,12 @@ function setupIframe() {
   document.getElementById("cal").innerHTML = iframeCal;
   document.getElementById("form").innerHTML = iframeForm;
 }
-setupDescription();
+function getArgv() {
+  var argvRaw = window.location.search;
+  var argv = new URLSearchParams(argvRaw);
+  return argv;
+}
+var argv = getArgv();
+var room = Number(argv.get("room"));
+setupDescription(room);
 setupIframe();

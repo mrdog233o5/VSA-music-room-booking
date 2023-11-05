@@ -1,9 +1,2 @@
 {
-	"rewrites": [
-		{"source": "/room1","destination": "/pages/rooms/1.html"},
-		{"source": "/room2","destination": "/pages/rooms/2.html"},
-		{"source": "/room3","destination": "/pages/rooms/3.html"},
-		{"source": "/room4","destination": "/pages/rooms/4.html"},
-		{"source": "/room5","destination": "/pages/rooms/5.html"}
-	]
 }

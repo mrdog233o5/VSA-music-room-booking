@@ -25,6 +25,11 @@ a {
     color: blueviolet;
 }
 
+hr {
+    border-color: #000;
+    margin: 5mm 0;
+}
+
 .key {
     position: relative;
     border-bottom: #1C2321 solid 1mm;
@@ -110,6 +115,8 @@ a {
     position: fixed;
     z-index: 100;
 }
+
+/* bottom */
 
 .bottomSec .text {
     margin: 3mm 10mm;

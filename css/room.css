@@ -1,3 +1,7 @@
+.wrapper {
+    padding-top: 15mm;
+}
+
 .backKey {
     position: relative;
     background-color:#30011E;
@@ -9,12 +13,22 @@
     align-items: center;
 }
 
-.backKey a{
+.backKey a {
     height: 100%;
     width: 100%;
     color: #ffe2b4;
     text-align: center;
     font-size: 200%;
+}
+
+.titleSec .bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(/files/img/idk.png);
 }
 
 .titleSec {

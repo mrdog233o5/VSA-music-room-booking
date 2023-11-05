@@ -4,14 +4,11 @@ async function getText(file) {
 		return myText;
 }
 
-async function setupDescription() {
+async function setupDescription(roomNum) {
 
     // read
-    var room = document.getElementById('room');
     var desSec = document.getElementsByClassName('desSec')[0];
-    var roomNum = Number(room.getAttribute('data'));
     var infos = JSON.parse(await getText("/files/infos/rooms.json"))["rooms"][roomNum-1];
-    room.style.display = "none";
 
     // change the text
     document.getElementsByClassName("titleText")[0].innerHTML = infos["room"];
@@ -25,5 +22,13 @@ function setupIframe() {
     document.getElementById("form").innerHTML = iframeForm;
 }
 
-setupDescription();
+function getArgv() {
+    var argvRaw = window.location.search;
+    var argv = new URLSearchParams(argvRaw);
+    return argv;
+}
+
+var argv = getArgv();
+var room = Number(argv.get("room"));
+setupDescription(room);
 setupIframe();
