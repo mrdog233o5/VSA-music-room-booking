@@ -1,8 +1,8 @@
 {
 	"rewrites": [
 		{
-			"source": "/room/",
-			"destination": "/pages/rooms/"
+			"source": "/room/*.html",
+			"destination": "/pages/rooms/*.html"
 		}
 	]
 }
