@@ -1,7 +1,8 @@
 {
 	"rewrites": [
-	{
-		"source": "/room1",
-		"destination": "/pages/room1.html"
-	},
+		{
+			"source": "/room1",
+			"destination": "/pages/room1.html"
+		},
+	]
 }
