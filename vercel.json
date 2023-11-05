@@ -3,6 +3,6 @@
 		{
 			"source": "/room1",
 			"destination": "/pages/room1.html"
-		},
+		}
 	]
 }
