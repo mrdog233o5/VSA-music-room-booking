@@ -1,3 +1,15 @@
+@keyframes updown {
+    0% {
+        transform: translateY(2cm);
+    }
+    50% {
+        transform: translateY(-2cm);
+    }
+    100% {
+        transform: translateY(2cm);
+    }
+}
+
 .titleSec {
     height: 100vh;
     display: flex;
@@ -6,7 +18,25 @@
     align-items: center;
     text-align: center;
     font-size: 5vw;
-    color: #30011E;
+    color: #ffe2b4;
+}
+
+.titleSec .placeholder {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    left: 0;
+}
+
+.titleSec .title h1 {
+    mix-blend-mode: difference;
+}
+
+.titleSec .title .icon {
+    position: absolute;
+    scale: 0.6;
+    z-index: -1;
+    animation: updown 5s ease infinite;
 }
 
 .titleSec .whiteKey {
@@ -55,7 +85,7 @@
 }
 
 .room .text .right {
-    position: relative;
+    position : relative;
 }
 
 .room .text .right img {

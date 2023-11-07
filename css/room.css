@@ -32,7 +32,6 @@
 }
 
 .titleSec {
-    position: relative;
     height: 30vh;
     display: flex;
     flex-direction: row;
@@ -41,6 +40,21 @@
     text-align: center;
     font-size: 700%;
     color: #30011E;
+}
+
+.titleSec .text {
+    position: relative;
+    display: flex;
+    flex: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.titleSec .text * {
+    text-shadow: 0 0 4mm #ffffff;
 }
 
 .sec {
