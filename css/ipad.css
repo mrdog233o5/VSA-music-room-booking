@@ -34,7 +34,7 @@ body {
     display: block;
     position: relative;
     padding: 1vw;
-    height: 41vh;
+    height: 40vh;
 }
 
 .bookItem iframe {
@@ -47,4 +47,8 @@ body {
 
 .bottomSec .container .blank {
     display: none;
+}
+
+.bottomSec .container hr {
+    margin: 0;
 }
