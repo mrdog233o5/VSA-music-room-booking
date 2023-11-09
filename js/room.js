@@ -7,12 +7,13 @@ async function getText(file) {
 async function setupDescription(roomNum) {
 
     // read
-    var desSec = document.getElementsByClassName('desSec')[0];
     var infos = JSON.parse(await getText("/files/infos/rooms.json"))["rooms"][roomNum-1];
+    var title = Array.from(document.getElementsByClassName("roomNum"));
 
     // change the text
-    document.getElementsByClassName("titleText")[0].innerHTML = infos["room"];
-    desSec.querySelector("#location").innerHTML = "location: " + infos["room"];
+    title.forEach(i => {
+        i.innerHTML = infos["room"];
+    });
 }
 
 function setupIframe() {
