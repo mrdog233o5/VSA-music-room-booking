@@ -1,5 +1,6 @@
 .wrapper {
     padding-top: 15mm;
+    backdrop-filter: blur(10px);
 }
 
 .backKey {
@@ -28,7 +29,6 @@
     height: 100%;
     background-position: center;
     background-size: cover;
-    background-image: url(/files/img/idk.png);
 }
 
 .titleSec {
@@ -58,11 +58,7 @@
 }
 
 .sec {
-    padding: 10mm;
-}
-
-.desSec {
-    font-size: 10mm;
+    padding-top: 30px;
 }
 
 .bookItem {
@@ -75,11 +71,7 @@
 .bookItem iframe {
     width: 100%;
     height: 100%;
-    border-radius: 5mm;
+    border-radius: 16px;
     background-color: #121212;
-    box-shadow: 0 0 10mm #121212;
-}
-
-.bookItem iframe:hover {
-    scale: 1.02;
+    box-shadow: 0 0 10px #121212;
 }

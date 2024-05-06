@@ -12,7 +12,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: music;
-    transition: all 0.3s;
     scroll-behavior: smooth;
 }
 
@@ -58,15 +57,15 @@ hr {
     border-top-left-radius: 3mm;
     border-bottom-left-radius: 3mm;
     z-index: 2;
-
 }
 
 .key .blackKey * {
     color: #ffe2b4;
+    transition: transform 0.3s;
 }
 
 .key .blackKey :hover * {
-    scale: 1.05;
+    transform: scale(1.05);
 }
 
 .key .blackKey{
@@ -119,7 +118,7 @@ hr {
 /* bottom */
 
 .bottomSec .text {
-    margin: 3mm 10mm;
+    margin: 10px 30px;
 }
 
 .bottomSec .credits .text * {

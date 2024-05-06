@@ -1,16 +1,16 @@
 body {
-    overflow: hidden;
+    position: relative;
+    height: 100vh;
 }
 
 .wrapper {
-    overflow: hidden;
-    padding-top: 15mm;
+    height: calc(100vh - 184px);
 }
 
 .backKey {
     position: relative;
     background-color:#30011E;
-    height: 15mm;
+    height: 64px;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -26,23 +26,37 @@ body {
     font-size: 170%;
 }
 
-.sec {
-    padding: 3mm;
+.bookSec {
+    height: 100%;
+    padding: 16px;
+}
+
+.bookSecFlex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
 }
 
 .bookItem {
-    display: block;
-    position: relative;
-    padding: 1vw;
-    height: 40vh;
+    width: 100%;
+    height: 100%;
 }
 
 .bookItem iframe {
+    overflow: scroll;
     width: 100%;
     height: 100%;
-    border-radius: 5mm;
+    border-radius: 16px;
     background-color: #121212;
-    box-shadow: 0 0 10mm #121212;
+    box-shadow: 0 0 16px #121212;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
 }
 
 .bottomSec .container .blank {
