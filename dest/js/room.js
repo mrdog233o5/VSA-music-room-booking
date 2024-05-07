@@ -35,22 +35,10 @@ function _getText() {
 function setupDescription(roomNum) {
   var title = Array.from(document.getElementsByClassName("roomNum"));
 
-  // Sanitize the roomNum value
-  var sanitizedRoomNum = sanitizeInput(roomNum);
-
   // Change the text
   title.forEach(function (i) {
-    i.textContent = sanitizedRoomNum;
+    i.textContent = roomNum;
   });
-}
-
-// Function to sanitize the input value
-function sanitizeInput(input) {
-  // Replace any characters that could be interpreted as HTML tags or entities
-  var sanitizedInput = input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-  // Return the sanitized input
-  return sanitizedInput;
 }
 function setupIframe() {
   var iframeCal = String.raw(_templateObject || (_templateObject = _taggedTemplateLiteral(["<iframe src=\"https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FHong_Kong&mode=WEEK&showTitle=0&showCalendars=0&showPrint=0&showNav=0&src=ODZiZmU4ZTVmMGY5Zjc3YmY2MDBhYmM1MGFhODFkZWMwODY2ZDhjNjI0YzdjNWUyMDYzOGYzMTIwMDA1YTUyZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457\" style=\"border:solid 1px #777\" width=\"800\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe>"])));

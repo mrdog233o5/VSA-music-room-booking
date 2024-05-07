@@ -7,22 +7,10 @@ async function getText(file) {
 function setupDescription(roomNum) {
     var title = Array.from(document.getElementsByClassName("roomNum"));
 
-    // Sanitize the roomNum value
-    var sanitizedRoomNum = sanitizeInput(roomNum);
-
     // Change the text
     title.forEach(i => {
-        i.textContent = sanitizedRoomNum;
+        i.textContent = roomNum;
     });
-}
-
-// Function to sanitize the input value
-function sanitizeInput(input) {
-    // Replace any characters that could be interpreted as HTML tags or entities
-    var sanitizedInput = input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-    // Return the sanitized input
-    return sanitizedInput;
 }
 
 function setupIframe() {
