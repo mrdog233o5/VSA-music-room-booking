@@ -32,33 +32,25 @@ function _getText() {
   }));
   return _getText.apply(this, arguments);
 }
-function setupDescription(_x2) {
-  return _setupDescription.apply(this, arguments);
+function setupDescription(roomNum) {
+  var title = Array.from(document.getElementsByClassName("roomNum"));
+
+  // Sanitize the roomNum value
+  var sanitizedRoomNum = sanitizeInput(roomNum);
+
+  // Change the text
+  title.forEach(function (i) {
+    i.textContent = sanitizedRoomNum;
+  });
 }
-function _setupDescription() {
-  _setupDescription = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(roomNum) {
-    var infos, title;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.t0 = JSON;
-          _context2.next = 3;
-          return getText("/files/infos/rooms.json");
-        case 3:
-          _context2.t1 = _context2.sent;
-          _context2.t2 = roomNum - 1;
-          infos = _context2.t0.parse.call(_context2.t0, _context2.t1)["rooms"][_context2.t2];
-          title = Array.from(document.getElementsByClassName("roomNum")); // change the text
-          title.forEach(function (i) {
-            i.innerHTML = infos["room"];
-          });
-        case 8:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return _setupDescription.apply(this, arguments);
+
+// Function to sanitize the input value
+function sanitizeInput(input) {
+  // Replace any characters that could be interpreted as HTML tags or entities
+  var sanitizedInput = input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  // Return the sanitized input
+  return sanitizedInput;
 }
 function setupIframe() {
   var iframeCal = String.raw(_templateObject || (_templateObject = _taggedTemplateLiteral(["<iframe src=\"https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FHong_Kong&mode=WEEK&showTitle=0&showCalendars=0&showPrint=0&showNav=0&src=ODZiZmU4ZTVmMGY5Zjc3YmY2MDBhYmM1MGFhODFkZWMwODY2ZDhjNjI0YzdjNWUyMDYzOGYzMTIwMDA1YTUyZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457\" style=\"border:solid 1px #777\" width=\"800\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe>"])));
@@ -72,6 +64,5 @@ function getArgv() {
   return argv;
 }
 var argv = getArgv();
-var room = Number(argv.get("room"));
-setupDescription(room);
+setupDescription(argv.get("room"));
 setupIframe();

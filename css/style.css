@@ -125,3 +125,7 @@ hr {
     font-family: 'Times New Roman', Times, serif;
     line-height: 0;
 }
+
+iframe {
+    overflow: hidden;
+}

@@ -4,16 +4,25 @@ async function getText(file) {
 		return myText;
 }
 
-async function setupDescription(roomNum) {
-
-    // read
-    var infos = JSON.parse(await getText("/files/infos/rooms.json"))["rooms"][roomNum-1];
+function setupDescription(roomNum) {
     var title = Array.from(document.getElementsByClassName("roomNum"));
 
-    // change the text
+    // Sanitize the roomNum value
+    var sanitizedRoomNum = sanitizeInput(roomNum);
+
+    // Change the text
     title.forEach(i => {
-        i.innerHTML = infos["room"];
+        i.textContent = sanitizedRoomNum;
     });
+}
+
+// Function to sanitize the input value
+function sanitizeInput(input) {
+    // Replace any characters that could be interpreted as HTML tags or entities
+    var sanitizedInput = input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    // Return the sanitized input
+    return sanitizedInput;
 }
 
 function setupIframe() {
@@ -30,6 +39,5 @@ function getArgv() {
 }
 
 var argv = getArgv();
-var room = Number(argv.get("room"));
-setupDescription(room);
+setupDescription(argv.get("room"));
 setupIframe();
