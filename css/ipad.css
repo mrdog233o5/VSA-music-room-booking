@@ -5,6 +5,31 @@ body {
 
 .wrapper {
     height: calc(100vh - 184px);
+    display: flex;
+}
+
+#leftSide {
+    height: calc(100% - 60px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 30px;
+    width: calc(calc(100% - calc(100vh - 184px)) - 60px);
+}
+
+#rightSide img {
+    height: 100%;
+}
+
+.part h1 {
+    font-size: 40px;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.part h2 {
+    font-size: 25px;
+    height: 100px;
 }
 
 .backKey {
@@ -65,4 +90,24 @@ body {
 
 .bottomSec .container hr {
     margin: 0;
+}
+
+#childProof {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: yellow;
+    border: red solid 10px;
+    border-radius: 10px;
+    padding: 70px;
+}
+
+#childProof * {
+    white-space: nowrap;
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+    color: red;
+    text-align: center;
 }

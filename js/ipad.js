@@ -1,18 +1,53 @@
-function getCalEvents(room) {
-    const url = `https://script.google.com/macros/s/AKfycbzaZ_gZkz3M3ub35La9mjqxIOWxnbdwsiBUMnfdphio5AG5UqZ8RdzH7jS0sRzrBGTi/exec?room=${room}`;
-
-    fetch(url)
-    .then(response => {
-        return response.text();
-    })
-    .then(data => {
-      console.log(data); // Output the response data
-    })
+function getCalEvents() {
+	const url = `https://script.google.com/macros/s/AKfycbxAaVuBo4lbMeQ6IGg9fjmcMKxwKAC21_N_WZcPRy-Wer_XRn52m38_Q3VpWLxpvRZt/exec?room=${argv.get("room")}`;
+	
+	fetch(url)
+	.then((response) => {
+		return response.text();
+	})
+	.then((data) => {
+		let dataJson = JSON.parse(data);
+		dataJson["events"].forEach((event) => {
+			bookerNameElements[Number(event["timePeriod"])].textContent = event["booker"];
+		});
+	})
+	.catch((error) => {
+		console.error(error);
+	});
+	setTimeout(() => {
+		window.requestAnimationFrame(getCalEvents);
+	}, 1000); // update every minute
 }
 
+function setupDescription(roomNum) {
+    var title = Array.from(document.getElementsByClassName("roomNum"));
 
+    // Change the text
+    title.forEach(i => {
+        i.textContent = roomNum;
+    });
+}
 
-
+// display booker name
 var argvRaw = window.location.search;
 var argv = new URLSearchParams(argvRaw);
-getCalEvents(argv.get("room"));
+var bookerNameElements = document.getElementsByClassName("bookerName");
+Array.from(bookerNameElements).forEach((element) => {
+	element.textContent = "Not booked yet";
+})
+getCalEvents();
+
+// show room number
+setupDescription(argv.get("room"));
+
+// SECURITY LEVEL 999999999 - CHILD PROOF FUNCTION
+const childProofElement = document.getElementById("childProof");
+const childProofDelay = 3000;
+var lastClick = 0;
+document.body.onclick = () => {
+	childProofElement.hidden = false;
+	lastClick = Date.now();
+	setTimeout(() => {
+		if (Date.now() - lastClick > childProofDelay) childProofElement.hidden = true;
+	}, childProofDelay);
+}
