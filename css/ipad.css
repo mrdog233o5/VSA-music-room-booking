@@ -5,14 +5,14 @@ body {
 }
 
 .wrapper {
-    height: calc(100vh - 184px);
+    height: calc(100vh - 152px);
     display: flex;
 }
 
 #leftSide {
     height: calc(100% - 60px);
-    margin: 30px;
-    width: calc(calc(100% - calc(calc(100vh - 184px) * 0.6)) - 60px);
+    padding: 30px;
+    width: calc(70vw - 60px);
 }
 
 #leftSideH1 {
@@ -28,13 +28,6 @@ body {
     flex-direction: column;
 }
 
-#qrcode {
-    width: 30%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
 .part h1 {
     font-size: 40px;
     font-style: italic;
@@ -44,6 +37,44 @@ body {
 .part h2 {
     font-size: 25px;
     height: 100px;
+}
+
+#rightSide {
+    height: calc(calc(100vh - 104px) - 30vw);
+    padding: 20px;
+    padding-left: 0;
+    width: calc(30vw - 20px);
+}
+
+#rightSideH1 {
+    font-size: 30px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+#rightSideContainer {
+    height: calc(100% - 90px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#qrcode {
+    width: 30vw;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#rightSide .part h1 {
+    font-size: 30px;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+#rightSide .part h2 {
+    font-size: 20px;
+    height: 30px;
 }
 
 .backKey {
@@ -95,7 +126,8 @@ body {
 .bottom {
     position: absolute;
     bottom: 0;
-    width: 100vw;
+    width: 70vw;
+    height: 88px;
 }
 
 .bottomSec .container .blank {
