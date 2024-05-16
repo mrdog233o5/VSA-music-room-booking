@@ -38,9 +38,11 @@ var bookerNameElements = document.getElementsByClassName("bookerName");
 var bookerNameElementsTmr = document.getElementsByClassName("bookerNameTmr");
 Array.from(bookerNameElements).forEach((element) => {
 	element.textContent = "Not booked yet";
+	element.style.color = "green";
 })
 Array.from(bookerNameElementsTmr).forEach((element) => {
 	element.textContent = "Not booked yet";
+	element.style.color = "green";
 })
 getCalEvents();
 
