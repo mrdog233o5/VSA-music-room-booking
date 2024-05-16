@@ -55,5 +55,5 @@ document.body.onclick = function () {
   lastClick = Date.now();
   setTimeout(function () {
     if (Date.now() - lastClick > childProofDelay) childProofElement.hidden = true;
-  }, childProofDelay);
+  }, childProofDelay + 100);
 };
