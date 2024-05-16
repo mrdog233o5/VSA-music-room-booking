@@ -7,7 +7,7 @@ async function getText(file) {
 async function roomList() {
 	
 	var container = document.getElementsByClassName("bottomSec")[0];
-	var bottomHtml = await getText("/files/html/bottom.html");
+	var bottomHtml = await getText("../files/html/bottom.html");
 	container.innerHTML = bottomHtml;
 }
 

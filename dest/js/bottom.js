@@ -41,7 +41,7 @@ function _roomList() {
         case 0:
           container = document.getElementsByClassName("bottomSec")[0];
           _context2.next = 3;
-          return getText("/files/html/bottom.html");
+          return getText("../files/html/bottom.html");
         case 3:
           bottomHtml = _context2.sent;
           container.innerHTML = bottomHtml;
