@@ -7,7 +7,6 @@ function getCalEvents() {
 	})
 	.then((data) => {
 		let dataJson = JSON.parse(data);
-		console.log(dataJson);
 		dataJson["events"].forEach((event) => {
 			bookerNameElements[Number(event["timePeriod"])].textContent = event["booker"];
 		});
