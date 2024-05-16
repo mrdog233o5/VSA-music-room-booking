@@ -1,6 +1,7 @@
 body {
-    position: relative;
+    position: fixed;
     height: 100vh;
+    overflow: hidden;
 }
 
 .wrapper {
@@ -10,15 +11,28 @@ body {
 
 #leftSide {
     height: calc(100% - 60px);
+    margin: 30px;
+    width: calc(calc(100% - calc(calc(100vh - 184px) * 0.6)) - 60px);
+}
+
+#leftSideH1 {
+    font-size: 60px;
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+#leftSideContainer {
+    height: calc(100% - 90px);
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 30px;
-    width: calc(calc(100% - calc(100vh - 184px)) - 60px);
 }
 
-#rightSide img {
-    height: 100%;
+#qrcode {
+    width: 30%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .part h1 {
@@ -100,12 +114,12 @@ body {
     background: yellow;
     border: red solid 10px;
     border-radius: 10px;
-    padding: 70px;
+    padding: 30px;
 }
 
 #childProof * {
     white-space: nowrap;
-    font-size: 60px;
+    font-size: 40px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
     color: red;
