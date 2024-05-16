@@ -6,7 +6,6 @@ function getCalEvents() {
     return response.text();
   }).then(function (data) {
     var dataJson = JSON.parse(data);
-    console.log(dataJson);
     dataJson["events"].forEach(function (event) {
       bookerNameElements[Number(event["timePeriod"])].textContent = event["booker"];
     });
@@ -47,7 +46,7 @@ setupDescription(argv.get("room"));
 
 // SECURITY LEVEL 999999999 - CHILD PROOF FUNCTION
 var childProofElement = document.getElementById("childProof");
-var childProofDelay = 3000;
+var childProofDelay = 1000;
 var lastClick = 0;
 document.body.onclick = function () {
   childProofElement.hidden = false;

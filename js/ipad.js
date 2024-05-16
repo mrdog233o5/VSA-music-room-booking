@@ -49,7 +49,7 @@ setupDescription(argv.get("room"));
 
 // SECURITY LEVEL 999999999 - CHILD PROOF FUNCTION
 const childProofElement = document.getElementById("childProof");
-const childProofDelay = 3000;
+const childProofDelay = 1000;
 var lastClick = 0;
 document.body.onclick = () => {
 	childProofElement.hidden = false;
