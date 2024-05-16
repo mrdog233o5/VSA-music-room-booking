@@ -8,9 +8,11 @@ function getCalEvents() {
     var dataJson = JSON.parse(data);
     dataJson["events"].forEach(function (event) {
       bookerNameElements[Number(event["timePeriod"])].textContent = event["booker"];
+      bookerNameElements[Number(event["timePeriod"])].style.color = "red";
     });
     dataJson["eventsTmr"].forEach(function (event) {
       bookerNameElementsTmr[Number(event["timePeriod"])].textContent = event["booker"];
+      bookerNameElementsTmr[Number(event["timePeriod"])].style.color = "red";
     });
   })["catch"](function (error) {
     console.error(error);
