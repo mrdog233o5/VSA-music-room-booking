@@ -40,7 +40,7 @@ body {
 }
 
 #rightSide {
-    height: calc(calc(100vh - 104px) - 30vw);
+    height: calc(calc(100vh - 123px) - 30vw);
     padding: 20px;
     padding-left: 0;
     width: calc(30vw - 20px);
@@ -58,14 +58,6 @@ body {
     justify-content: space-between;
     flex-direction: column;
 }
-
-#qrcode {
-    width: 30vw;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
 #rightSide .part h1 {
     font-size: 30px;
     font-style: italic;
@@ -156,4 +148,17 @@ body {
     font-weight: 1000;
     color: red;
     text-align: center;
+}
+
+#qrcode {
+    width: 30vw;
+}
+
+#qrContainer {
+    background-color: #FFFFFF;
+    border-top-left-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
