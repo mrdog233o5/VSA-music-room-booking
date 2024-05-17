@@ -62,3 +62,14 @@ document.body.onclick = () => {
 		if (Date.now() - lastClick > childProofDelay) childProofElement.hidden = true;
 	}, childProofDelay+100);
 }
+
+// CREATE QR CODE
+new QRCode(
+	document.getElementById("qrcode"), {
+		text: `https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform?usp=pp_url&entry.1111580129=${argv.get("room")}`,
+		width: document.body.clientWidth * 0.3,
+		height: document.body.clientWidth * 0.3,
+		colorDark : "#121212",
+		colorLight : "#ffffff"
+	}
+);
