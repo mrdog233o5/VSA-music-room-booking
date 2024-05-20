@@ -162,3 +162,33 @@ body {
     right: 0;
     bottom: 0;
 }
+
+#backdoor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: yellow;
+    border: red solid 10px;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#backdoor .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#backdoor * {
+    white-space: nowrap;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+    color: red;
+    text-align: center;
+    resize: none;
+}

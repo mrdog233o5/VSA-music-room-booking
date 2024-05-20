@@ -1,4 +1,18 @@
-function getCalEvents() {
+function update() {
+	// set title stuff
+	setupDescription(roomNum);
+
+	// reset the stuff
+	Array.from(bookerNameElements).forEach((element) => {
+		element.textContent = "Not booked yet";
+		element.style.color = "green";
+	})
+	Array.from(bookerNameElementsTmr).forEach((element) => {
+		element.textContent = "Not booked yet";
+		element.style.color = "green";
+	})
+
+	// fetch and show again
 	const url = `https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec?room=${argv.get("room")}`;
 	
 	fetch(url)
@@ -20,8 +34,20 @@ function getCalEvents() {
 		console.error(error);
 	});
 	setTimeout(() => {
-		window.requestAnimationFrame(getCalEvents);
+		window.requestAnimationFrame(update);
 	}, 1000); // update every minute
+	
+	// CREATE QR CODE===
+	qrContainer.innerHTML = "";
+	new QRCode(
+		qrContainer, {
+			text: `https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform?usp=pp_url&entry.1111580129=${roomNum}`,
+			width: document.body.clientWidth * 0.3,
+			height: document.body.clientWidth * 0.3,
+			colorDark : "#121212",
+			colorLight : "#ffffff"
+		}
+	);
 }
 
 function setupDescription(roomNum) {
@@ -34,22 +60,13 @@ function setupDescription(roomNum) {
 }
 
 // display booker name
-var argvRaw = window.location.search;
-var argv = new URLSearchParams(argvRaw);
-var bookerNameElements = document.getElementsByClassName("bookerName");
-var bookerNameElementsTmr = document.getElementsByClassName("bookerNameTmr");
-Array.from(bookerNameElements).forEach((element) => {
-	element.textContent = "Not booked yet";
-	element.style.color = "green";
-})
-Array.from(bookerNameElementsTmr).forEach((element) => {
-	element.textContent = "Not booked yet";
-	element.style.color = "green";
-})
-getCalEvents();
+const argv = new URLSearchParams(window.location.search);
+const bookerNameElements = document.getElementsByClassName("bookerName");
+const bookerNameElementsTmr = document.getElementsByClassName("bookerNameTmr");
+const qrContainer = document.getElementById("qrcode");
+var roomNum = argv.get("room");
 
-// show room number
-setupDescription(argv.get("room"));
+update();
 
 // SECURITY LEVEL 999999999 - CHILD PROOF FUNCTION
 const childProofElement = document.getElementById("childProof");
@@ -61,15 +78,40 @@ document.body.onclick = () => {
 	setTimeout(() => {
 		if (Date.now() - lastClick > childProofDelay) childProofElement.hidden = true;
 	}, childProofDelay+100);
-}
+};
 
-// CREATE QR CODE
-new QRCode(
-	document.getElementById("qrcode"), {
-		text: `https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform?usp=pp_url&entry.1111580129=${argv.get("room")}`,
-		width: document.body.clientWidth * 0.3,
-		height: document.body.clientWidth * 0.3,
-		colorDark : "#121212",
-		colorLight : "#ffffff"
+// BACKDOOR CLASSIFIED *****
+const backdoorContainer = document.getElementById("backdoor");
+const backdoorTextarea = document.getElementById("backdoorRoomNum");
+const backdoorBtn = document.getElementById("backdoorBtn");
+var backdoorLastClick = 0;
+var backdoorClicks = 0;
+
+// panel
+backdoorTextarea.value = roomNum;
+backdoorTextarea.oninput = () => {
+	roomNum = backdoorTextarea.value;
+};
+
+// trigger
+// show
+qrContainer.onclick = () => {
+	if (Date.now() - lastClick <= 3000) {
+		backdoorClicks ++;
+	} else {
+		backdoorLastClick = Date.now();
+		backdoorClicks = 0;
 	}
-);
+	if (backdoorClicks >= 10) {
+		backdoorLastClick = 0;
+		backdoorClicks = 0;
+		backdoorContainer.hidden = false;
+	}
+};
+
+// hide
+backdoorBtn.onclick = () => {
+	backdoorLastClick = 0;
+	backdoorClicks = 0;
+	backdoorContainer.hidden = true;
+};
