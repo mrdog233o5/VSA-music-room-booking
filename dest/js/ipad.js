@@ -55,11 +55,10 @@ function setupDescription(roomNum) {
 }
 
 // display booker name
-var argv = new URLSearchParams(window.location.search);
 var bookerNameElements = document.getElementsByClassName("bookerName");
 var bookerNameElementsTmr = document.getElementsByClassName("bookerNameTmr");
 var qrContainer = document.getElementById("qrcode");
-var roomNum = argv.get("room");
+var roomNum = "";
 update();
 
 // SECURITY LEVEL 999999999 - CHILD PROOF FUNCTION

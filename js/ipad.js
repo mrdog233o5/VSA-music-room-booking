@@ -60,11 +60,10 @@ function setupDescription(roomNum) {
 }
 
 // display booker name
-const argv = new URLSearchParams(window.location.search);
 const bookerNameElements = document.getElementsByClassName("bookerName");
 const bookerNameElementsTmr = document.getElementsByClassName("bookerNameTmr");
 const qrContainer = document.getElementById("qrcode");
-var roomNum = argv.get("room");
+var roomNum = "";
 
 update();
 
