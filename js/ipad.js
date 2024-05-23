@@ -63,6 +63,7 @@ function setupDescription(roomNum) {
 const bookerNameElements = document.getElementsByClassName("bookerName");
 const bookerNameElementsTmr = document.getElementsByClassName("bookerNameTmr");
 const qrContainer = document.getElementById("qrcode");
+const backdoorEntrance = document.getElementById("backdoorEntrance");
 var roomNum = "";
 
 update();
@@ -94,7 +95,7 @@ backdoorTextarea.oninput = () => {
 
 // trigger
 // show
-qrContainer.onclick = () => {
+backdoorEntrance.onclick = () => {
 	if (Date.now() - lastClick <= 3000) {
 		backdoorClicks ++;
 	} else {
