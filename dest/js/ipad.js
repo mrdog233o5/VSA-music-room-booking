@@ -15,7 +15,7 @@ function update() {
   });
 
   // fetch and show again
-  var url = "https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec?room=".concat(argv.get("room"));
+  var url = "https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec?room=".concat(roomNum);
   fetch(url).then(function (response) {
     return response.text();
   }).then(function (data) {

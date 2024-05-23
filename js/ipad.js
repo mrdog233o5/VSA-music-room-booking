@@ -13,7 +13,7 @@ function update() {
 	})
 
 	// fetch and show again
-	const url = `https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec?room=${argv.get("room")}`;
+	const url = `https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec?room=${roomNum}`;
 	
 	fetch(url)
 	.then((response) => {
