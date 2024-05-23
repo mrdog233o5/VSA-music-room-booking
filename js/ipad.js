@@ -1,3 +1,7 @@
+// URLs
+const apiURL = `https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec`;
+const formURL = `https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform`
+
 function update() {
 	// set title stuff
 	setupDescription(roomNum);
@@ -13,7 +17,7 @@ function update() {
 	})
 
 	// fetch and show again
-	const url = `https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec?room=${roomNum}`;
+	const url = `${apiUrl}?room=${roomNum}`;
 	
 	fetch(url)
 	.then((response) => {
@@ -41,7 +45,7 @@ function update() {
 	qrContainer.innerHTML = "";
 	new QRCode(
 		qrContainer, {
-			text: `https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform?usp=pp_url&entry.1111580129=${roomNum}`,
+			text: `${formUrl}?usp=pp_url&entry.1111580129=${roomNum}`,
 			width: document.body.clientWidth * 0.3,
 			height: document.body.clientWidth * 0.3,
 			colorDark : "#121212",

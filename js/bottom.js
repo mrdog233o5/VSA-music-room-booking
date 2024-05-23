@@ -8,7 +8,7 @@ async function roomList() {
 	
 	var container = document.getElementsByClassName("bottomSec")[0];
 	var bottomHtml = await getText("../files/html/bottom.html");
-	container.innerHTML = bottomHtml;
+	container.textContent = bottomHtml;
 }
 
 // some music rooms idk
