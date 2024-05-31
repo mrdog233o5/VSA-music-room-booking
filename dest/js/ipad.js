@@ -1,5 +1,8 @@
 "use strict";
 
+// URLs
+var apiURL = "https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec";
+var formURL = "https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform";
 function update() {
   // set title stuff
   setupDescription(roomNum);
@@ -15,7 +18,7 @@ function update() {
   });
 
   // fetch and show again
-  var url = "https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec?room=".concat(roomNum);
+  var url = "".concat(apiUrl, "?room=").concat(roomNum);
   fetch(url).then(function (response) {
     return response.text();
   }).then(function (data) {
@@ -38,7 +41,7 @@ function update() {
   // CREATE QR CODE===
   qrContainer.innerHTML = "";
   new QRCode(qrContainer, {
-    text: "https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform?usp=pp_url&entry.1111580129=".concat(roomNum),
+    text: "".concat(formUrl, "?usp=pp_url&entry.1111580129=").concat(roomNum),
     width: document.body.clientWidth * 0.3,
     height: document.body.clientWidth * 0.3,
     colorDark: "#121212",
