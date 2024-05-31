@@ -44,7 +44,7 @@ function _roomList() {
           return getText("../files/html/bottom.html");
         case 3:
           bottomHtml = _context2.sent;
-          container.textContent = bottomHtml;
+          container.innerHTML = bottomHtml;
         case 5:
         case "end":
           return _context2.stop();
