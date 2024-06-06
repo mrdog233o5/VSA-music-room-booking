@@ -1,6 +1,6 @@
 // URLs
-const apiURL = `https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec`;
-const formURL = `https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform`
+const apiURL = `https://script.google.com/macros/s/AKfycbzKM3SFVqm69HXN1_4wv-7emlPn9BE3s-cDYG075nFkgRPoyFSrNBebJ9jtPMzPnMVD4g/exec`;
+const formURL = `https://docs.google.com/forms/d/e/1FAIpQLScRSvadzmoFpnc7qVVM2BXSEUf1iOP3QF0NcB03pLyomOeaKw/viewform?usp=sf_link`;
 
 function update() {
 	// set title stuff
@@ -17,7 +17,7 @@ function update() {
 	})
 
 	// fetch and show again
-	const url = `${apiUrl}?room=${roomNum}`;
+	const url = `${apiURL}?room=${roomNum}`;
 	
 	fetch(url)
 	.then((response) => {
@@ -25,6 +25,7 @@ function update() {
 	})
 	.then((data) => {
 		let dataJson = JSON.parse(data);
+		console.log(dataJson);
 		dataJson["events"].forEach((event) => {
 			bookerNameElements[Number(event["timePeriod"])].textContent = event["booker"];
 			bookerNameElements[Number(event["timePeriod"])].style.color = "red";
@@ -45,7 +46,7 @@ function update() {
 	qrContainer.innerHTML = "";
 	new QRCode(
 		qrContainer, {
-			text: `${formUrl}?usp=pp_url&entry.1111580129=${roomNum}`,
+			text: `${formURL}?usp=pp_url&entry.1111580129=${roomNum}`,
 			width: document.body.clientWidth * 0.3,
 			height: document.body.clientWidth * 0.3,
 			colorDark : "#121212",

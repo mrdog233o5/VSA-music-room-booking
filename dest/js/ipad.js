@@ -1,5 +1,8 @@
 "use strict";
 
+// URLs
+var apiURL = "https://script.google.com/macros/s/AKfycbzKM3SFVqm69HXN1_4wv-7emlPn9BE3s-cDYG075nFkgRPoyFSrNBebJ9jtPMzPnMVD4g/exec";
+var formURL = "https://docs.google.com/forms/d/e/1FAIpQLScRSvadzmoFpnc7qVVM2BXSEUf1iOP3QF0NcB03pLyomOeaKw/viewform?usp=sf_link";
 function update() {
   // set title stuff
   setupDescription(roomNum);
@@ -15,11 +18,12 @@ function update() {
   });
 
   // fetch and show again
-  var url = "https://script.google.com/macros/s/AKfycbwum5gPyELNHOgdA-830hj07DvRu2M2m07U_Mtgr4rckkDmfcI6SeR6Dqvxm5RnQkvu/exec?room=".concat(roomNum);
+  var url = "".concat(apiURL, "?room=").concat(roomNum);
   fetch(url).then(function (response) {
     return response.text();
   }).then(function (data) {
     var dataJson = JSON.parse(data);
+    console.log(dataJson);
     dataJson["events"].forEach(function (event) {
       bookerNameElements[Number(event["timePeriod"])].textContent = event["booker"];
       bookerNameElements[Number(event["timePeriod"])].style.color = "red";
@@ -38,7 +42,7 @@ function update() {
   // CREATE QR CODE===
   qrContainer.innerHTML = "";
   new QRCode(qrContainer, {
-    text: "https://docs.google.com/forms/d/e/1FAIpQLScfZrbt1IEWbVdJM9mRXeu0e1zcKEWD2jstfcER4nDizcsE5w/viewform?usp=pp_url&entry.1111580129=".concat(roomNum),
+    text: "".concat(formURL, "?usp=pp_url&entry.1111580129=").concat(roomNum),
     width: document.body.clientWidth * 0.3,
     height: document.body.clientWidth * 0.3,
     colorDark: "#121212",
