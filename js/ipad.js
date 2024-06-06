@@ -1,20 +1,10 @@
 // URLs
-const apiURL = `https://script.google.com/macros/s/AKfycbzKM3SFVqm69HXN1_4wv-7emlPn9BE3s-cDYG075nFkgRPoyFSrNBebJ9jtPMzPnMVD4g/exec`;
+const apiURL = `https://script.google.com/macros/s/AKfycbys5bxlmflc8x93S0F1BI_-WANlI_b_86WHlDQrC1tre325U2C6RB6DP_gLiiXSWe8VNw/exec`;
 const formURL = `https://docs.google.com/forms/d/e/1FAIpQLScRSvadzmoFpnc7qVVM2BXSEUf1iOP3QF0NcB03pLyomOeaKw/viewform?usp=sf_link`;
 
 function update() {
 	// set title stuff
 	setupDescription(roomNum);
-
-	// reset the stuff
-	Array.from(bookerNameElements).forEach((element) => {
-		element.textContent = "Not booked yet";
-		element.style.color = "green";
-	})
-	Array.from(bookerNameElementsTmr).forEach((element) => {
-		element.textContent = "Not booked yet";
-		element.style.color = "green";
-	})
 
 	// fetch and show again
 	const url = `${apiURL}?room=${roomNum}`;
@@ -24,6 +14,16 @@ function update() {
 		return response.text();
 	})
 	.then((data) => {
+		// reset the stuff
+		Array.from(bookerNameElements).forEach((element) => {
+			element.textContent = "Not booked yet";
+			element.style.color = "green";
+		})
+		Array.from(bookerNameElementsTmr).forEach((element) => {
+			element.textContent = "Not booked yet";
+			element.style.color = "green";
+		})
+		
 		let dataJson = JSON.parse(data);
 		console.log(dataJson);
 		dataJson["events"].forEach((event) => {

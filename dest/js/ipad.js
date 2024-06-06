@@ -1,27 +1,26 @@
 "use strict";
 
 // URLs
-var apiURL = "https://script.google.com/macros/s/AKfycbzKM3SFVqm69HXN1_4wv-7emlPn9BE3s-cDYG075nFkgRPoyFSrNBebJ9jtPMzPnMVD4g/exec";
+var apiURL = "https://script.google.com/macros/s/AKfycbys5bxlmflc8x93S0F1BI_-WANlI_b_86WHlDQrC1tre325U2C6RB6DP_gLiiXSWe8VNw/exec";
 var formURL = "https://docs.google.com/forms/d/e/1FAIpQLScRSvadzmoFpnc7qVVM2BXSEUf1iOP3QF0NcB03pLyomOeaKw/viewform?usp=sf_link";
 function update() {
   // set title stuff
   setupDescription(roomNum);
-
-  // reset the stuff
-  Array.from(bookerNameElements).forEach(function (element) {
-    element.textContent = "Not booked yet";
-    element.style.color = "green";
-  });
-  Array.from(bookerNameElementsTmr).forEach(function (element) {
-    element.textContent = "Not booked yet";
-    element.style.color = "green";
-  });
 
   // fetch and show again
   var url = "".concat(apiURL, "?room=").concat(roomNum);
   fetch(url).then(function (response) {
     return response.text();
   }).then(function (data) {
+    // reset the stuff
+    Array.from(bookerNameElements).forEach(function (element) {
+      element.textContent = "Not booked yet";
+      element.style.color = "green";
+    });
+    Array.from(bookerNameElementsTmr).forEach(function (element) {
+      element.textContent = "Not booked yet";
+      element.style.color = "green";
+    });
     var dataJson = JSON.parse(data);
     console.log(dataJson);
     dataJson["events"].forEach(function (event) {
