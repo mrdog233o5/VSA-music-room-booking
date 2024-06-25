@@ -22,7 +22,6 @@ function update() {
       element.style.color = "green";
     });
     var dataJson = JSON.parse(data);
-    console.log(dataJson);
     dataJson["events"].forEach(function (event) {
       bookerNameElements[Number(event["timePeriod"])].textContent = event["booker"];
       bookerNameElements[Number(event["timePeriod"])].style.color = "red";

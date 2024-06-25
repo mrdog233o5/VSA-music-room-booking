@@ -143,7 +143,7 @@ body {
 
 #childProof * {
     white-space: nowrap;
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
     color: red;

@@ -25,7 +25,6 @@ function update() {
 		})
 		
 		let dataJson = JSON.parse(data);
-		console.log(dataJson);
 		dataJson["events"].forEach((event) => {
 			bookerNameElements[Number(event["timePeriod"])].textContent = event["booker"];
 			bookerNameElements[Number(event["timePeriod"])].style.color = "red";
